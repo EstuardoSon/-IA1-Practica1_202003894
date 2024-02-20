@@ -1,0 +1,19 @@
+/* You can add global styles to this file, and also import other style files */
+body{
+    color: white;
+    background: rgb(2,0,36);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(9,9,121,1) 35%, rgba(0,212,255,1) 100%);
+}
+
+h2{
+    font-family: 'Courier New', Courier, monospace;
+    text-align: center;  
+}
+
+#contenedor {
+    width: 100%;
+    background-color: #191830;
+    padding: 20px 20px 20px 20px;
+    margin: 10px 10px 10px 10px;
+    border-radius: 10% 10% 10% 10%;
+  }
