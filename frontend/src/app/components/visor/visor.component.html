@@ -1,13 +1,24 @@
-<div id="contenedor">
-  <div class="row mx-0 justify-content-evenly">
+<div id="contenedor" class="p-3">
+  <div class="row mx-0 justify-content-evenly p-2">
     <div class="col col-6">
-      <input type="file" class="form-control" (change)="onFileChange($event)" />
+      <input type="file" class="form-control" (change)="onFileChange($event)" accept=".jpg, .png" />
     </div>
-      <button class="btn btn-primary col col-6 align-items-center" (click)="onUpload($event)">UPLOAD</button>
+    <button
+      class="btn btn-primary col col-4 align-items-center"
+      (click)="onUpload($event)"
+    >
+      UPLOAD
+    </button>
   </div>
+  <br />
   <div class="row mx-0 justify-content-evenly">
     <div class="col col-8">
-      <img [src]="url" alt="image" class="img-fluid" />
+      <div class="d-flex justify-content-center">
+        <img [src]="url" [style]="estilo" alt="" class="img-fluid" />
+      </div>
     </div>
+  </div>
+  <div class="d-flex justify-content-center mt-2">
+    <h4>{{ validacion }}</h4>
   </div>
 </div>

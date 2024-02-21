@@ -11,8 +11,8 @@ public class tag {
 	}
 	
 	private float getPorcentaje(float escala) {
-		if (escala != 0) {
-			return escala * 20;
+		if (escala > 1) {
+			return (escala - 1) * 25;
 		}
 		return 0;
 	}
