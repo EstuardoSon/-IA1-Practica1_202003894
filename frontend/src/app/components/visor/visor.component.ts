@@ -24,8 +24,10 @@ export class VisorComponent {
     if (this.file) {
       formData.append("file", this.file);
       this.backendService.postURL("/scan", formData).subscribe(
-        (res) => {
+        (res:any) => {
           console.log(res);
+          this.backendService.setTags(res.tags);
+          this.backendService.setCont(res.rostros);
         },
         (err) => {
           console.log(err);

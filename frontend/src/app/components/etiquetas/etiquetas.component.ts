@@ -9,9 +9,7 @@ import { BackendService } from '../../services/backend.service';
   styleUrl: './etiquetas.component.css'
 })
 export class EtiquetasComponent {
-  constructor(private backendService: BackendService) {
+  
+  constructor(public backendService: BackendService) {
   }
-
-  tags = this.backendService.tags;
-  cont = 0; 
 }

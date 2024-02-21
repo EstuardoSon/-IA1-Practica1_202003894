@@ -7,11 +7,20 @@ import { Injectable } from '@angular/core';
 export class BackendService {
 
   url = 'http://localhost:8080';
-  tags = [{tag: 'tag1', percent:10}, {tag: 'tag2', percent:20}, {tag: 'tag3', percent:30}];
+  tags:Array<any> = [];
+  cont = 0;
 
   constructor(private http:HttpClient) { }
 
   public postURL(endpoint: string, body: any, options?: any) {
     return this.http.post(this.url+endpoint, body);
+  }
+
+  public setTags(tags: Array<any>) {
+    this.tags = tags;
+  }
+
+  public setCont(cont: number) {
+    this.cont = cont;
   }
 }
