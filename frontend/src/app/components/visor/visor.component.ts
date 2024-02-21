@@ -12,7 +12,10 @@ import { BackendService } from "../../services/backend.service";
 export class VisorComponent {
   file: Blob | null = null;
   url = "";
-  validacion = "";
+  validacion = {
+    text:"",
+    color:""
+  };
 
   estilo = {
     filter: `blur(0px)`
@@ -42,9 +45,15 @@ export class VisorComponent {
 
           let sum = res.tags[0].porcentaje + res.tags[3].porcentaje + res.tags[4].porcentaje;
           if (sum >= 45) {
-            this.validacion = "Imagen no apta para la institución";
+            this.validacion = {
+              text:"Imagen no apta para la institución",
+              color:"red"
+            };
           } else {
-            this.validacion = "Imagen valida";
+            this.validacion = {
+              text:"Imagen valida",
+              color:"green"
+            };
           }
         },
         (err) => {
@@ -57,7 +66,10 @@ export class VisorComponent {
   onFileChange(event: any) {
     this.url = URL.createObjectURL(event.target.files[0]);
     this.file = event.target.files[0];
-    this.validacion = "";
+    this.validacion = {
+      text:"",
+      color:""
+    };
     this.estilo = {
       filter: `blur(0px)`
     }
